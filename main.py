@@ -5,7 +5,7 @@ from mininet.node import RemoteController
 from mininet.log import setLogLevel
 import json
 
-from topologies import StarTopo, RingTopo, CustomTopo, FatTree, PartialMeshTopo
+from topologies import StarTopo, RingTopo, CustomTopo, FatTree, PartialMeshTopo, FullMeshTopo, TreeTopo
 
 app = FastAPI()
 network = None  # Store the active Mininet network instance
@@ -19,12 +19,12 @@ async def websocket_endpoint(websocket: WebSocket):
     try:
         while True:
             command = await websocket.receive_text()
-            print(f"Received command: {command}")
+            print(f"Received: {command}")
 
             if command.startswith("start:"):
-                _, hosts, switches, topology = command.split(":")
+                _, hosts, switches, topology, meshType = command.split(":")
                 hosts, switches = int(hosts), int(switches)
-                response = await start_mininet(hosts, switches, topology)
+                response = await start_mininet(hosts, switches, topology, meshType)
                 await websocket.send_json(response)
 
             elif command == "stop":
@@ -36,7 +36,8 @@ async def websocket_endpoint(websocket: WebSocket):
                     await websocket.send_text("No active Mininet session.")
 
             elif command.startswith("exec:"):
-                cmd = command.split("exec:")[1].strip()
+                cmd = command.split(":")[1].strip()
+                print(f'Executing {cmd}...')
                 result = await execute_mininet_command(cmd)
                 await websocket.send_text(result)
 
@@ -47,25 +48,30 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.close()
 
 
-async def start_mininet(hosts, switches, topology):
+async def start_mininet(hosts_num, switches, topology, meshType):
     global network
     setLogLevel("info")
 
     try:
         os.system("sudo mn -c")  # Clean previous Mininet sessions
 
-        print(f"Starting Mininet with {hosts} hosts, {switches} switches, topology: {topology}")
+        print(f"Starting Mininet with {hosts_num} hosts, {switches} switches, topology: {topology}")
         
         if topology == "star":
-            topo = StarTopo(hosts, switches)
+            topo = StarTopo(hosts_num, switches)
         elif topology == "fattree":
-            topo = FatTree(hosts)
+            topo = FatTree(hosts_num)
         elif topology == "ring":
             topo = RingTopo(switches)
         elif topology == "mesh":
-            topo = PartialMeshTopo(hosts)
+            if meshType == 'partial':
+                topo = PartialMeshTopo(hosts_num)
+            else:
+                topo = FullMeshTopo(hosts_num)
+        elif topology == 'tree':
+            topo = TreeTopo(hosts_num)
         elif topology == "custom":
-            topo = CustomTopo(hosts, switches)
+            topo = CustomTopo(hosts_num, switches)
         else:
             return {'message': "Invalid topology", 'status': 'failure'}
 
@@ -78,7 +84,7 @@ async def start_mininet(hosts, switches, topology):
             "links": [(link.intf1.node.name, link.intf2.node.name) for link in net.links],
         }
 
-        network = net  # Store the Mininet instance
+        network = net 
 
         return {"message": "Mininet started successfully!", "topology": topology_data, "status": "success"}
 

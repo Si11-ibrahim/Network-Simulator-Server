@@ -1,4 +1,4 @@
-### Guide to install and run server on WSL2
+### Guide to install and run server on WSL2 / Ubuntu Linux
 
 Step 1:
 	Install mininet:
@@ -31,10 +31,8 @@ Step 3: Installing required packages
 		>>> pip install "fastapi[standard]"
 		>>> pip install mininet
 		
-Step 4: Copy server codes
-	1. Copy server codes located in server directory
-	2. Create a directory called server inside ubuntu
-	3. Paste the codes as same structure as where you copied
+Step 4: Get server codes
+	1. Get server code from https://github.com/Si11-ibrahim/Network-Simulator-Server.git
 
 
 Step 5:
@@ -54,10 +52,8 @@ Final steps to run server:
 	5. To start server: python3 -m uvicorn main:app --reload
 
 Error handling: 
-	If mininet stuck in starting switches, run:
+	If mininet stuck at starting switches, run:
 		>>> sudo ovs-vswitchd --pidfile --detach
 
-
-
-
-
+	If "address already in use" error at the time of starting server:
+		>>> sudo lsof -t -i tcp:8000 | xargs kill -9

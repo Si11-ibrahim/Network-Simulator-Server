@@ -134,3 +134,63 @@ class FatTree(Topo):
                     return
                 host = self.addHost(f'h{host_count}', bw=10)
                 self.addLink(edge_switches[i], host)
+
+
+class TreeTopo(Topo):
+    def __init__(self, num_hosts):
+        super(TreeTopo, self).__init__()
+
+        if num_hosts < 2:
+            raise ValueError("Tree topology requires at least 2 hosts.")
+
+        # Create root switch
+        root_switch = self.addSwitch("s1")
+        switches = [root_switch]
+        hosts = []
+
+        # Create tree structure dynamically
+        current_switch_index = 2
+        host_index = 1
+        queue = [root_switch]
+
+        while host_index <= num_hosts:
+            parent_switch = queue.pop(0)
+
+            # Create left child switch
+            left_switch = self.addSwitch(f"s{current_switch_index}")
+            self.addLink(parent_switch, left_switch)
+            queue.append(left_switch)
+            switches.append(left_switch)
+            current_switch_index += 1
+
+            # Assign a host to the left switch
+            if host_index <= num_hosts:
+                host = self.addHost(f"h{host_index}")
+                self.addLink(left_switch, host)
+                hosts.append(host)
+                host_index += 1
+
+            # Create right child switch if needed
+            if host_index <= num_hosts:
+                right_switch = self.addSwitch(f"s{current_switch_index}")
+                self.addLink(parent_switch, right_switch)
+                queue.append(right_switch)
+                switches.append(right_switch)
+                current_switch_index += 1
+
+                # Assign a host to the right switch
+                host = self.addHost(f"h{host_index}")
+                self.addLink(right_switch, host)
+                hosts.append(host)
+                host_index += 1
+
+        # Create JSON response
+        topology_data = {
+            "message": "Tree topology generated successfully!",
+            "topology": {
+                "hosts": hosts,
+                "switches": switches,
+                "links": [(link[0], link[1]) for link in self.links()]
+            },
+            "status": "success"
+        }
