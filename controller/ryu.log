@@ -1,4 +1,0 @@
-loading app controller.py
-loading app ryu.controller.ofp_handler
-instantiating app controller.py of CustomController
-instantiating app ryu.controller.ofp_handler of OFPHandler
