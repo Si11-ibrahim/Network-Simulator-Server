@@ -1,4 +1,4 @@
-### Guide to install and run server on WSL2 / Ubuntu Linux
+### Guide to install and run server on  Ubuntu VM
 
 Step 1:
 	Install mininet:
@@ -10,7 +10,10 @@ Step 1:
 		>>> mininet/util/install.sh -a
 		>>> Test Purpose: sudo mn --switch ovsbr --test pingall
 
-Step 2: Install virtual environment
+Step 2: Get server codes
+        1. Get server code from https://github.com/Si11-ibrahim/Network-Simulator-Server.git
+
+Step 3: Install virtual environment
 
 		>>> sudo apt update && sudo apt upgrade 
 		>>> sudo apt install python3-pip (Install if pip3 not working)		
@@ -22,7 +25,7 @@ Step 2: Install virtual environment
 	To activate: 
 		>>> source <venv name>/bin/activate
 
-Step 3: Installing required packages
+Step 4: Installing required packages
 
 	Note: Must activate venv before installation.
 
@@ -30,19 +33,19 @@ Step 3: Installing required packages
 		>>> pip install uvicorn
 		>>> pip install "fastapi[standard]"
 		>>> pip install mininet
-		
-Step 4: Get server codes
-	1. Get server code from https://github.com/Si11-ibrahim/Network-Simulator-Server.git
-
 
 Step 5:
 	Install pox controller:
 		>>> git clone https://github.com/noxrepo/pox.git
 	
+	Get "packet_tracker.py" from Network-Simulator-Server/controller 
+	directory and put it in pox/ext directory
+	
 	Note: Run this controller in another ubuntu instance.
 
 	To run the controller:
-		>>> ./pox.py forwarding.l2_learning
+		>>> ./pox.py forwarding.l2_learning packet_tracker
+
 
 Final steps to run server:
 	1. >>> sudo su

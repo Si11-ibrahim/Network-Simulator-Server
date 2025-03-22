@@ -15,6 +15,7 @@ network = None  # Store the active Mininet network instance
 async def websocket_endpoint(websocket: WebSocket):
     global network
     await websocket.accept()
+    await websocket.send_text('Connection successful...')
 
     try:
         while True:
@@ -99,6 +100,20 @@ async def execute_mininet_command(cmd):
             if cmd == 'pingall':
                 result = network.pingAll()
                 return f"PingAll output: {result}"
+            elif cmd.split(' ')[0] == 'ping':
+                data = cmd.split(' ') # Eg: ['ping', 'h1', 'h2']
+                host1 = network.get(data[1])
+                host2 = network.get(data[2])
+                result = host1.cmd('ping -c 1 %s' % host2.IP()) # Sending to the ip of the second host
+                print(result)
+                isSuccessful = '0% packet loss' in result
+                if isSuccessful:
+                    print(f'ping from {data[1]} to {data[2]} success')
+                    return f'ping from {data[1]} to {data[2]} success'
+                else:
+                    print(f'ping from {data[1]} to {data[2]} failure')
+                    return 'ping failure'
+                
             else:
                 result = network.run(cmd)
                 return f"Command output: {result}"
@@ -106,4 +121,4 @@ async def execute_mininet_command(cmd):
             return f"Error executing command: {str(e)}"
     return "No active Mininet session."
 
-# python3 -m uvicorn main:app --reload
+# python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
