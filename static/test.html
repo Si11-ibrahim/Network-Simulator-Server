@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .sent {
+            background-color: #e6f7ff;
+            text-align: right;
+        }
+        .received {
+            background-color: #f0f0f0;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        input {
+            padding: 8px;
+            width: 300px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <div>
+        <input type="text" id="serverUrl" value="ws://192.168.56.102:8000/ws" placeholder="WebSocket URL">
+        <button id="connect">Connect</button>
+        <button id="disconnect">Disconnect</button>
+    </div>
+    <div>
+        <input type="text" id="messageInput" placeholder="Message to send">
+        <button id="send">Send</button>
+    </div>
+    <div>
+        <button id="sendTest">Send Test Message</button>
+        <button id="sendStart">Send Start Command</button>
+        <button id="sendStop">Send Stop Command</button>
+        <button id="sendExec">Send Exec Command</button>
+    </div>
+    <div id="messages"></div>
+
+    <script>
+        let socket = null;
+        const messagesDiv = document.getElementById('messages');
+        const serverUrlInput = document.getElementById('serverUrl');
+        const messageInput = document.getElementById('messageInput');
+        const connectButton = document.getElementById('connect');
+        const disconnectButton = document.getElementById('disconnect');
+        const sendButton = document.getElementById('send');
+        const sendTestButton = document.getElementById('sendTest');
+        const sendStartButton = document.getElementById('sendStart');
+        const sendStopButton = document.getElementById('sendStop');
+        const sendExecButton = document.getElementById('sendExec');
+
+        function addMessage(message, type = '') {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            if (type) {
+                messageElement.classList.add(type);
+            }
+            messageElement.textContent = message;
+            messagesDiv.appendChild(messageElement);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        connectButton.addEventListener('click', () => {
+            const serverUrl = serverUrlInput.value;
+            if (!serverUrl) {
+                addMessage('Please enter a WebSocket URL', 'error');
+                return;
+            }
+
+            try {
+                socket = new WebSocket(serverUrl);
+                
+                socket.onopen = () => {
+                    addMessage('Connected to WebSocket server', 'success');
+                    // Send an initial message to identify as a client
+                    const initMessage = {
+                        type: 'client_connected',
+                        message: 'Browser client connected',
+                        timestamp: new Date().toISOString()
+                    };
+                    socket.send(JSON.stringify(initMessage));
+                    addMessage(`Sent initialization message: ${JSON.stringify(initMessage)}`, 'sent');
+                };
+                
+                socket.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        addMessage(`Received: ${JSON.stringify(data, null, 2)}`, 'received');
+                    } catch (e) {
+                        addMessage(`Received: ${event.data}`, 'received');
+                    }
+                };
+                
+                socket.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                    addMessage(`WebSocket error details:`, 'error');
+                    for (let prop in error) {
+                        addMessage(`${prop}: ${error[prop]}`, 'error');
+                    }
+                };
+                
+                socket.onclose = (event) => {
+                    console.log('WebSocket closed:', event);
+                    addMessage('WebSocket connection closed', 'error');
+                    addMessage(`Close code: ${event.code}`, 'error');
+                    addMessage(`Close reason: ${event.reason || 'No reason provided'}`, 'error');
+                    addMessage(`Clean close: ${event.wasClean}`, 'error');
+                    socket = null;
+                };
+            } catch (error) {
+                addMessage(`Error connecting: ${error}`, 'error');
+            }
+        });
+
+        disconnectButton.addEventListener('click', () => {
+            if (socket) {
+                socket.close();
+                addMessage('Disconnected', 'success');
+            } else {
+                addMessage('Not connected', 'error');
+            }
+        });
+
+        sendButton.addEventListener('click', () => {
+            if (!socket) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const message = messageInput.value;
+            if (!message) {
+                addMessage('Please enter a message', 'error');
+                return;
+            }
+
+            try {
+                socket.send(message);
+                addMessage(`Sent: ${message}`, 'sent');
+                messageInput.value = '';
+            } catch (error) {
+                addMessage(`Error sending message: ${error}`, 'error');
+            }
+        });
+
+        sendTestButton.addEventListener('click', () => {
+            if (!socket) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const testMessage = {
+                type: 'test',
+                message: 'Test message from browser',
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                socket.send(JSON.stringify(testMessage));
+                addMessage(`Sent: ${JSON.stringify(testMessage)}`, 'sent');
+            } catch (error) {
+                addMessage(`Error sending test message: ${error}`, 'error');
+            }
+        });
+
+        sendStartButton.addEventListener('click', () => {
+            if (!socket) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const startCommand = 'start:4:ring:partial';
+            try {
+                socket.send(startCommand);
+                addMessage(`Sent: ${startCommand}`, 'sent');
+            } catch (error) {
+                addMessage(`Error sending start command: ${error}`, 'error');
+            }
+        });
+
+        sendStopButton.addEventListener('click', () => {
+            if (!socket) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const stopCommand = 'stop';
+            try {
+                socket.send(stopCommand);
+                addMessage(`Sent: ${stopCommand}`, 'sent');
+            } catch (error) {
+                addMessage(`Error sending stop command: ${error}`, 'error');
+            }
+        });
+
+        sendExecButton.addEventListener('click', () => {
+            if (!socket) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const execCommand = 'exec:pingall';
+            try {
+                socket.send(execCommand);
+                addMessage(`Sent: ${execCommand}`, 'sent');
+            } catch (error) {
+                addMessage(`Error sending exec command: ${error}`, 'error');
+            }
+        });
+    </script>
+</body>
+</html> 

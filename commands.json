@@ -1,0 +1,1213 @@
+{
+  "commands": [
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:12:33.963780"
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:22:04.326594"
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:28:09.230354"
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:36:47.432124"
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:38:51.916158"
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:39:22.566117"
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "pending",
+      "timestamp": "2025-04-14T15:59:23.192046"
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T16:01:34.185217",
+      "id": 1,
+      "last_updated": "2025-04-14T16:01:34.322613",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=107 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 106.808/106.808/106.808/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T16:48:56.274727",
+      "id": 2,
+      "last_updated": "2025-04-14T16:48:56.380196",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=98.3 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 98.265/98.265/98.265/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T16:52:32.873944",
+      "id": 3,
+      "last_updated": "2025-04-14T16:52:32.947043",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=57.8 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 57.833/57.833/57.833/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:02:11.693300",
+      "id": 4,
+      "last_updated": "2025-04-14T17:02:11.799040",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=95.3 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 95.257/95.257/95.257/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:07:17.587577",
+      "id": 5,
+      "last_updated": "2025-04-14T17:07:17.798010",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=197 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 196.914/196.914/196.914/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:10:09.231523",
+      "id": 6,
+      "last_updated": "2025-04-14T17:10:09.356915",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=112 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 112.338/112.338/112.338/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:12:02.614963",
+      "id": 7,
+      "last_updated": "2025-04-14T17:12:02.731691",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=106 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 105.978/105.978/105.978/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:12:18.355846",
+      "id": 8,
+      "last_updated": "2025-04-14T17:12:18.699903",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:16:00.895090",
+      "id": 9,
+      "last_updated": "2025-04-14T17:16:00.969294",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=65.7 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 65.703/65.703/65.703/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:16:11.275922",
+      "id": 10,
+      "last_updated": "2025-04-14T17:16:11.378102",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=94.4 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 94.437/94.437/94.437/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:16:17.926210",
+      "id": 11,
+      "last_updated": "2025-04-14T17:16:17.945284",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.23 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 7.234/7.234/7.234/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h3 h1",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:16:37.559645",
+      "id": 12,
+      "last_updated": "2025-04-14T17:16:37.583508",
+      "details": {
+        "result": "PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.\r\n64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=14.3 ms\r\n\r\n--- 10.0.0.1 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 14.345/14.345/14.345/0.000 ms\r\n",
+        "success": true,
+        "source": "h3",
+        "destination": "h1"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:22:33.533525",
+      "id": 13,
+      "last_updated": "2025-04-14T17:22:33.601824",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=59.1 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 59.068/59.068/59.068/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:22:39.794470",
+      "id": 14,
+      "last_updated": "2025-04-14T17:22:40.115828",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:57:42.895151",
+      "id": 15,
+      "last_updated": "2025-04-14T17:57:42.965574",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=56.6 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 56.610/56.610/56.610/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-14T17:58:20.851025",
+      "id": 16,
+      "last_updated": "2025-04-14T17:58:21.179762",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T18:01:44.937460",
+      "id": 17,
+      "last_updated": "2025-04-14T18:01:45.036825",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=89.7 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 89.710/89.710/89.710/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-14T18:01:54.528966",
+      "id": 18,
+      "last_updated": "2025-04-14T18:01:54.833959",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T18:10:00.855396",
+      "id": 19,
+      "last_updated": "2025-04-14T18:10:03.972473",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T19:47:20.332262",
+      "id": 20,
+      "last_updated": "2025-04-14T19:47:20.446255",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=78.5 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 78.495/78.495/78.495/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T20:09:03.066751",
+      "id": 21,
+      "last_updated": "2025-04-14T20:09:03.210930",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=85.5 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 85.478/85.478/85.478/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h5",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T20:15:36.114593",
+      "id": 22,
+      "last_updated": "2025-04-14T20:15:36.322971",
+      "details": {
+        "result": "PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.\r\n64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=147 ms\r\n\r\n--- 10.0.0.5 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 147.288/147.288/147.288/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h5"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T20:18:58.156402",
+      "id": 23,
+      "last_updated": "2025-04-14T20:18:58.371214",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=142 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 141.624/141.624/141.624/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h5",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T20:23:21.142681",
+      "id": 24,
+      "last_updated": "2025-04-14T20:23:21.332356",
+      "details": {
+        "result": "PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.\r\n64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=160 ms\r\n\r\n--- 10.0.0.5 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 160.148/160.148/160.148/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h5"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T20:25:39.725219",
+      "id": 25,
+      "last_updated": "2025-04-14T20:25:39.896526",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=131 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 130.976/130.976/130.976/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:00:56.162145",
+      "id": 26,
+      "last_updated": "2025-04-14T21:00:58.502409",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=2316 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 2315.978/2315.978/2315.978/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h5",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:01:07.732988",
+      "id": 27,
+      "last_updated": "2025-04-14T21:01:07.863335",
+      "details": {
+        "result": "PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.\r\n64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=99.6 ms\r\n\r\n--- 10.0.0.5 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 99.617/99.617/99.617/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h5"
+      }
+    },
+    {
+      "command": "ping h1 h6",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:06:18.083103",
+      "id": 28,
+      "last_updated": "2025-04-14T21:06:18.153652",
+      "details": {
+        "result": "PING 10.0.0.6 (10.0.0.6) 56(84) bytes of data.\r\n64 bytes from 10.0.0.6: icmp_seq=1 ttl=64 time=49.3 ms\r\n\r\n--- 10.0.0.6 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 49.290/49.290/49.290/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h6"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:06:42.140779",
+      "id": 29,
+      "last_updated": "2025-04-14T21:06:47.386483",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:13:45.447952",
+      "id": 30,
+      "last_updated": "2025-04-14T21:13:48.563724",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h4",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-14T21:15:07.207341",
+      "id": 31,
+      "last_updated": "2025-04-14T21:15:10.292644",
+      "details": {
+        "result": "PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.4 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h4"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T06:45:51.309416",
+      "id": 32,
+      "last_updated": "2025-04-15T06:45:54.472446",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T06:57:18.168740",
+      "id": 33,
+      "last_updated": "2025-04-15T06:57:18.283131",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=62.3 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 62.324/62.324/62.324/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h5",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T06:57:32.702391",
+      "id": 34,
+      "last_updated": "2025-04-15T06:57:32.852650",
+      "details": {
+        "result": "PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.\r\n64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=124 ms\r\n\r\n--- 10.0.0.5 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 123.766/123.766/123.766/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h5"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:01:48.673395",
+      "id": 35,
+      "last_updated": "2025-04-15T07:01:48.831437",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=99.9 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 99.857/99.857/99.857/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:01:55.764435",
+      "id": 36,
+      "last_updated": "2025-04-15T07:01:58.827987",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:02:10.353538",
+      "id": 37,
+      "last_updated": "2025-04-15T07:02:13.403478",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:02:19.708338",
+      "id": 38,
+      "last_updated": "2025-04-15T07:02:22.832053",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "pending",
+      "timestamp": "2025-04-15T07:03:44.097416",
+      "id": 39
+    },
+    {
+      "command": "ping h15 h20",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:08:39.035526",
+      "id": 40,
+      "last_updated": "2025-04-15T07:08:49.063108",
+      "details": {
+        "result": "PING 10.0.0.20 (10.0.0.20) 56(84) bytes of data.\r\n\r\n--- 10.0.0.20 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h15",
+        "destination": "h20"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:09:22.405295",
+      "id": 41,
+      "last_updated": "2025-04-15T07:11:46.343415",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h15 h14",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:13:46.248963",
+      "id": 42,
+      "last_updated": "2025-04-15T07:13:56.279622",
+      "details": {
+        "result": "PING 10.0.0.14 (10.0.0.14) 56(84) bytes of data.\r\n\r\n--- 10.0.0.14 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h15",
+        "destination": "h14"
+      }
+    },
+    {
+      "command": "ping h1 h20",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:15:52.259226",
+      "id": 43,
+      "last_updated": "2025-04-15T07:16:02.283125",
+      "details": {
+        "result": "PING 10.0.0.20 (10.0.0.20) 56(84) bytes of data.\r\n\r\n--- 10.0.0.20 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h20"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:19:28.896571",
+      "id": 44,
+      "last_updated": "2025-04-15T07:19:28.972219",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=18.2 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 18.236/18.236/18.236/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:20:36.285442",
+      "id": 45,
+      "last_updated": "2025-04-15T07:20:36.399589",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=26.3 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 26.282/26.282/26.282/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:21:19.883151",
+      "id": 46,
+      "last_updated": "2025-04-15T07:21:19.962126",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=47.7 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 47.676/47.676/47.676/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:25:21.902226",
+      "id": 47,
+      "last_updated": "2025-04-15T07:25:22.197160",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=244 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 243.758/243.758/243.758/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:25:45.975666",
+      "id": 48,
+      "last_updated": "2025-04-15T07:26:02.191922",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "h1 logs",
+      "source": "mininet",
+      "type": "logs",
+      "status": "pending",
+      "timestamp": "2025-04-15T07:26:30.490962",
+      "id": 49
+    },
+    {
+      "command": "h1 ifconfig",
+      "source": "mininet",
+      "type": "ifconfig",
+      "status": "pending",
+      "timestamp": "2025-04-15T07:26:49.488373",
+      "id": 50
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:35:54.656453",
+      "id": 51,
+      "last_updated": "2025-04-15T07:36:06.614856",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:37:55.229201",
+      "id": 52,
+      "last_updated": "2025-04-15T07:37:55.300716",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=42.3 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 42.325/42.325/42.325/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h6",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:38:05.464463",
+      "id": 53,
+      "last_updated": "2025-04-15T07:38:15.505513",
+      "details": {
+        "result": "PING 10.0.0.6 (10.0.0.6) 56(84) bytes of data.\r\n\r\n--- 10.0.0.6 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h6"
+      }
+    },
+    {
+      "command": "ping h1 8",
+      "source": "mininet",
+      "type": "ping",
+      "status": "error",
+      "timestamp": "2025-04-15T07:39:07.195024",
+      "id": 54,
+      "last_updated": "2025-04-15T07:39:07.205811",
+      "details": {
+        "error": "Error executing ping: '8'"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:39:18.917243",
+      "id": 55,
+      "last_updated": "2025-04-15T07:39:19.128163",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=157 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 157.313/157.313/157.313/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:45:14.860092",
+      "id": 56,
+      "last_updated": "2025-04-15T07:45:15.068190",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=167 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 167.133/167.133/167.133/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:45:34.825125",
+      "id": 57,
+      "last_updated": "2025-04-15T07:45:48.817837",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h7 h14",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T07:53:44.289948",
+      "id": 58,
+      "last_updated": "2025-04-15T07:53:54.319035",
+      "details": {
+        "result": "PING 10.0.0.14 (10.0.0.14) 56(84) bytes of data.\r\n\r\n--- 10.0.0.14 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h7",
+        "destination": "h14"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:22:03.083799",
+      "id": 59,
+      "last_updated": "2025-04-15T08:22:49.196045",
+      "details": {
+        "result": 1.1111111111111112
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:24:14.692060",
+      "id": 60,
+      "last_updated": "2025-04-15T08:24:28.392998",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h3 h6",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:51:52.247738",
+      "id": 61,
+      "last_updated": "2025-04-15T08:51:52.474210",
+      "details": {
+        "result": "PING 10.0.0.6 (10.0.0.6) 56(84) bytes of data.\r\n64 bytes from 10.0.0.6: icmp_seq=1 ttl=64 time=171 ms\r\n\r\n--- 10.0.0.6 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 170.825/170.825/170.825/0.000 ms\r\n",
+        "success": true,
+        "source": "h3",
+        "destination": "h6"
+      }
+    },
+    {
+      "command": "h1 ifconfig",
+      "source": "mininet",
+      "type": "ifconfig",
+      "status": "pending",
+      "timestamp": "2025-04-15T08:52:21.547052",
+      "id": 62
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:52:26.561890",
+      "id": 63,
+      "last_updated": "2025-04-15T08:52:42.231490",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:56:40.259170",
+      "id": 64,
+      "last_updated": "2025-04-15T08:56:50.398193",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:57:07.633589",
+      "id": 65,
+      "last_updated": "2025-04-15T08:57:31.037987",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:57:44.505123",
+      "id": 66,
+      "last_updated": "2025-04-15T08:58:03.354757",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:58:17.013404",
+      "id": 67,
+      "last_updated": "2025-04-15T08:58:39.340956",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:58:49.988776",
+      "id": 68,
+      "last_updated": "2025-04-15T08:59:14.011119",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T08:59:31.731555",
+      "id": 69,
+      "last_updated": "2025-04-15T09:00:02.619848",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-15T09:01:04.991861",
+      "id": 70,
+      "last_updated": "2025-04-15T09:01:27.918265",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-15T18:32:20.151939",
+      "id": 71,
+      "last_updated": "2025-04-15T18:32:23.241056",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-16T11:50:40.085433",
+      "id": 72,
+      "last_updated": "2025-04-16T11:50:43.231474",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-16T18:05:56.174218",
+      "id": 73,
+      "last_updated": "2025-04-16T18:05:56.437918",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=195 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 195.023/195.023/195.023/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "ping h16 h14",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-16T18:06:26.427504",
+      "id": 74,
+      "last_updated": "2025-04-16T18:06:26.724689",
+      "details": {
+        "result": "PING 10.0.0.14 (10.0.0.14) 56(84) bytes of data.\r\n64 bytes from 10.0.0.14: icmp_seq=1 ttl=64 time=273 ms\r\n\r\n--- 10.0.0.14 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 272.563/272.563/272.563/0.000 ms\r\n",
+        "success": true,
+        "source": "h16",
+        "destination": "h14"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-16T18:11:39.872387",
+      "id": 75,
+      "last_updated": "2025-04-16T18:12:57.025128",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "ping h1 h4",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-16T20:58:11.372904",
+      "id": 76,
+      "last_updated": "2025-04-16T20:58:14.597770",
+      "details": {
+        "result": "PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.\r\nFrom 10.0.0.1 icmp_seq=1 Destination Host Unreachable\r\n\r\n--- 10.0.0.4 ping statistics ---\r\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\r\n\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h4"
+      }
+    },
+    {
+      "command": "ping h1 h2",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:17:05.114772",
+      "id": 77,
+      "last_updated": "2025-04-17T05:17:05.254711",
+      "details": {
+        "result": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=61.3 ms\r\n\r\n--- 10.0.0.2 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 61.338/61.338/61.338/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h2"
+      }
+    },
+    {
+      "command": "ping h1 h4",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:17:13.704639",
+      "id": 78,
+      "last_updated": "2025-04-17T05:17:13.876257",
+      "details": {
+        "result": "PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.\r\n64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=131 ms\r\n\r\n--- 10.0.0.4 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 130.633/130.633/130.633/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h4"
+      }
+    },
+    {
+      "command": "ping h4 h1",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:17:19.702757",
+      "id": 79,
+      "last_updated": "2025-04-17T05:17:19.857816",
+      "details": {
+        "result": "PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.\r\n64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=94.9 ms\r\n\r\n--- 10.0.0.1 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 94.865/94.865/94.865/0.000 ms\r\n",
+        "success": true,
+        "source": "h4",
+        "destination": "h1"
+      }
+    },
+    {
+      "command": "ping h1 h4",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:19:10.109614",
+      "id": 80,
+      "last_updated": "2025-04-17T05:19:10.268985",
+      "details": {
+        "result": "PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.\r\n64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=104 ms\r\n\r\n--- 10.0.0.4 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 104.161/104.161/104.161/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h4"
+      }
+    },
+    {
+      "command": "ping h1 h3",
+      "source": "mininet",
+      "type": "ping",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:19:35.590112",
+      "id": 81,
+      "last_updated": "2025-04-17T05:19:35.746670",
+      "details": {
+        "result": "PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=129 ms\r\n\r\n--- 10.0.0.3 ping statistics ---\r\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\r\nrtt min/avg/max/mdev = 128.993/128.993/128.993/0.000 ms\r\n",
+        "success": true,
+        "source": "h1",
+        "destination": "h3"
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:20:02.143597",
+      "id": 82,
+      "last_updated": "2025-04-17T05:20:07.782509",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:20:52.657713",
+      "id": 83,
+      "last_updated": "2025-04-17T05:20:56.821682",
+      "details": {
+        "result": 0.0
+      }
+    },
+    {
+      "command": "pingall",
+      "source": "mininet",
+      "type": "pingall",
+      "status": "completed",
+      "timestamp": "2025-04-17T05:21:09.800783",
+      "id": 84,
+      "last_updated": "2025-04-17T05:21:14.311049",
+      "details": {
+        "result": 0.0
+      }
+    }
+  ],
+  "last_command": {
+    "id": 84,
+    "command": "pingall",
+    "type": "pingall",
+    "timestamp": "2025-04-17T05:21:09.800783"
+  }
+}

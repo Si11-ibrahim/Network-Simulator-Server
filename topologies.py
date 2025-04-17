@@ -9,11 +9,11 @@ class CustomTopo(Topo):
 
         switches = []
         for i in range(num_switches):
-            switch = self.addSwitch(f's{i+1}')
+            switch = self.addSwitch(f"s{i+1}")
             switches.append(switch)
 
         for i in range(num_hosts):
-            host = self.addHost(f'h{i+1}')
+            host = self.addHost(f"h{i+1}")
             switch_index = i % num_switches
             self.addLink(host, switches[switch_index])
 
@@ -21,23 +21,21 @@ class CustomTopo(Topo):
             self.addLink(switches[i], switches[i + 1])
 
 
-class StarTopo(Topo):
-    def __init__(self, num_hosts, num_switches):
-        super().__init__()
-        switch = self.addSwitch("s1")
-
-        for i in range(num_hosts):
-            host = self.addHost(f"h{i+1}")
-            self.addLink(host, switch)
-
 
 class RingTopo(Topo):
-    def __init__(self, num_devices):
+    def __init__(self, num_hosts):
         super().__init__()
-        nodes = [self.addSwitch(f"s{i+1}") for i in range(num_devices)]
-
-        for i in range(num_devices):
-            self.addLink(nodes[i], nodes[(i+1) % num_devices])
+        # Create switches
+        switches = [self.addSwitch(f"s{i+1}") for i in range(num_hosts)]
+        
+        # Create hosts and connect each to its switch
+        for i in range(num_hosts):
+            host = self.addHost(f"h{i+1}")
+            self.addLink(host, switches[i])
+        
+        # Connect switches in a ring
+        for i in range(num_hosts):
+            self.addLink(switches[i], switches[(i+1) % num_hosts])
 
 
 class FullMeshTopo(Topo):
@@ -46,7 +44,7 @@ class FullMeshTopo(Topo):
         # Create hosts
         hosts = []
         for i in range(num_hosts):
-            host = self.addHost(f'h{i+1}')
+            host = self.addHost(f"h{i+1}")
             hosts.append(host)
 
         # Fully connect all hosts (Mesh topology)
@@ -54,14 +52,14 @@ class FullMeshTopo(Topo):
             for j in range(i + 1, num_hosts):
                 self.addLink(hosts[i], hosts[j])
 
-class PartialMeshTopo(Topo):
+class Partial_MeshTopo(Topo):
     def __init__(self, num_hosts):
-        super(PartialMeshTopo, self).__init__()
+        super(Partial_MeshTopo, self).__init__()
 
         # Create hosts
         hosts = []
         for i in range(num_hosts):
-            host = self.addHost(f'h{i+1}')
+            host = self.addHost(f"h{i+1}")
             hosts.append(host)
 
         # Create partial mesh connections
@@ -76,6 +74,34 @@ class PartialMeshTopo(Topo):
         if num_hosts > 2:
             self.addLink(hosts[num_hosts-1], hosts[0])
 
+class StarTopo(Topo):
+    def __init__(self, num_hosts):
+        super(StarTopo, self).__init__()
+
+        switch = self.addSwitch("s1")  # Add a central switch
+
+        # Create hosts and connect them to the switch
+        for i in range(num_hosts):
+            host = self.addHost(f"h{i+1}")
+            self.addLink(host, switch)
+
+class PartialMeshTopo(Topo):
+    def __init__(self, num_hosts):
+        super().__init__()
+        switch = self.addSwitch('s1')
+        # Create hosts and connect them in a partial mesh
+        hosts = []
+        for i in range(1, num_hosts + 1):
+            host = self.addHost(f"h{i}")
+            hosts.append(host)
+            self.addLink(host, switch)  # Connect each host to the switch
+
+        # Add additional host-to-host links for partial mesh
+        for i in range(len(hosts)):
+            if i < len(hosts) - 1:
+                self.addLink(hosts[i], hosts[i + 1])  # Connect adjacent hosts
+            if i < len(hosts) - 2:
+                self.addLink(hosts[i], hosts[i + 2])  # Connect skipping one
 
 class FatTree(Topo):
     def __init__(self, num_hosts):
@@ -140,57 +166,64 @@ class TreeTopo(Topo):
     def __init__(self, num_hosts):
         super(TreeTopo, self).__init__()
 
-        if num_hosts < 2:
-            raise ValueError("Tree topology requires at least 2 hosts.")
+        if num_hosts < 3:
+            raise ValueError("Tree topology requires at least 3 hosts.")
 
         # Create root switch
         root_switch = self.addSwitch("s1")
         switches = [root_switch]
         hosts = []
-
-        # Create tree structure dynamically
-        current_switch_index = 2
         host_index = 1
+        switch_index = 2  # Start from s2
         queue = [root_switch]
 
         while host_index <= num_hosts:
             parent_switch = queue.pop(0)
 
-            # Create left child switch
-            left_switch = self.addSwitch(f"s{current_switch_index}")
-            self.addLink(parent_switch, left_switch)
-            queue.append(left_switch)
-            switches.append(left_switch)
-            current_switch_index += 1
-
-            # Assign a host to the left switch
-            if host_index <= num_hosts:
+            # Attach exactly 2 hosts to the current switch if possible
+            host_count = min(2, num_hosts - host_index + 1)
+            for _ in range(host_count):
                 host = self.addHost(f"h{host_index}")
-                self.addLink(left_switch, host)
+                self.addLink(parent_switch, host)
+                
                 hosts.append(host)
                 host_index += 1
 
-            # Create right child switch if needed
+            # Only add child switches if there are hosts left
+            # Check if we need to add a left child switch
             if host_index <= num_hosts:
-                right_switch = self.addSwitch(f"s{current_switch_index}")
-                self.addLink(parent_switch, right_switch)
-                queue.append(right_switch)
-                switches.append(right_switch)
-                current_switch_index += 1
+                # Calculate how many hosts will be under this branch
+                hosts_remaining = num_hosts - host_index + 1
+                
+                # Only add a switch if it will have at least one host
+                if hosts_remaining > 0:
+                    left_switch = self.addSwitch(f"s{switch_index}")
+                    self.addLink(parent_switch, left_switch)
+                    queue.append(left_switch)
+                    switches.append(left_switch)
+                    switch_index += 1
 
-                # Assign a host to the right switch
-                host = self.addHost(f"h{host_index}")
-                self.addLink(right_switch, host)
-                hosts.append(host)
-                host_index += 1
+            # Check if we need to add a right child switch
+            if host_index <= num_hosts:
+                # Calculate how many hosts will be under this branch
+                hosts_remaining = num_hosts - host_index + 1
+                
+                # Only add a switch if it will have at least one host
+                if hosts_remaining > 0:
+                    right_switch = self.addSwitch(f"s{switch_index}")
+                    self.addLink(parent_switch, right_switch)
+                    queue.append(right_switch)
+                    switches.append(right_switch)
+                    switch_index += 1
 
         # Create JSON response
         topology_data = {
             "message": "Tree topology generated successfully!",
             "topology": {
-                "hosts": hosts,
-                "switches": switches,
-                "links": [(link[0], link[1]) for link in self.links()]
+                "hosts": [str(h) for h in hosts],
+                "switches": [str(s) for s in switches],
+                "links": [(str(link[0]), str(link[1])) for link in self.links()]
             },
             "status": "success"
         }
+
